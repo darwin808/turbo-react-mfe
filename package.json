@@ -1,0 +1,45 @@
+{
+  "name": "poc_ux40",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "turbo build",
+    "prepare": "husky install && npm run prepare:dev",
+    "prepare:dev": "chmod ug+x .husky/*",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "serve": " pnpm build && pnpm --filter poc_* --parallel preview",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "rimraf {apps,packages}/**/{node_modules,dist,.next,.turbo} -g && rimraf node_modules"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "prettier": "^3.1.1",
+    "husky": "8.0.3",
+    "lint-staged": "^15.2.2",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@9.3.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 80,
+    "bracketSpacing": true,
+    "arrowParens": "always"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json}": [
+      "prettier -w"
+    ]
+  }
+}
