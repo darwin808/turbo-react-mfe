@@ -5,6 +5,6 @@ import '@repo/ui/main.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App React={React} />
+    <App />
   </React.StrictMode>,
 );

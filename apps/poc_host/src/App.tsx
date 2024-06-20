@@ -2,8 +2,6 @@ import RemotePage from 'poc_remote_a/page';
 import LoginPage from 'poc_login/page';
 import { Routes, Route, Outlet, Link } from 'react-router-dom';
 
-import React from 'react';
-
 function Layout() {
   return (
     <div className="bg-yellow-400">
@@ -54,7 +52,7 @@ function App() {
     return (
       <div className="h-screen bg-teal-600">
         <Routes>
-          <Route path="*" element={<LoginPage React={React} />} />
+          <Route path="*" element={<LoginPage />} />
         </Routes>
       </div>
     );

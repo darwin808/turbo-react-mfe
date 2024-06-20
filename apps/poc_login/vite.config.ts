@@ -19,7 +19,7 @@ export default defineConfig({
       exposes: {
         './page': './src/App.tsx',
       },
-      shared: [],
+      shared: ['react', 'react-dom'],
     }),
   ],
   server: {

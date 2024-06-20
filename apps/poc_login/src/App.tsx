@@ -1,6 +1,7 @@
 import { Button, Input } from '@repo/ui';
+import React from 'react';
 
-function App({ React }: any) {
+function App() {
   const [email, setEmail] = React.useState('');
 
   const [password, setPassword] = React.useState('');
@@ -31,6 +32,7 @@ function App({ React }: any) {
           className="bg-yellow-600 rounded-sm"
           variant={'outline'}
           onClick={(e) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             handleSubmit(e);
           }}
