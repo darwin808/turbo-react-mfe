@@ -1,4 +1,4 @@
-import { Button } from '@repo/ui';
+import { Button, Input } from '@repo/ui';
 
 function App({ React }: any) {
   const [email, setEmail] = React.useState('');
@@ -6,7 +6,7 @@ function App({ React }: any) {
   const [password, setPassword] = React.useState('');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     sessionStorage.setItem('token', 'darwin');
     setEmail('');
     setPassword('');
@@ -17,12 +17,12 @@ function App({ React }: any) {
     <div className="bg-pink-400 h-screen">
       POC LOGIN
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
           placeholder="EMAIL"
           value={email}
           onChange={(e) => setEmail(e.currentTarget.value)}
         />
-        <input
+        <Input
           placeholder="PASSWORD"
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
